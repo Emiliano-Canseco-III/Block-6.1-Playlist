@@ -18,7 +18,7 @@ app.get("/playlist", (req, res) => {
 app.get("/playlist/:id", (req, res) => {
   const id = parseInt(req.params.id, 10);
   if (id >= 0 && id < playlist.length) {
-    res.json({ [`song`]: `${playlist[id]}` });
+    res.json({ song: playlist[id] });
   } else {
     res.status(404).json({ error: "Song not found" });
   }
